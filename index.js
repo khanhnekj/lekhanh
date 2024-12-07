@@ -13,7 +13,7 @@ app.listen(port);
 function startBot(message) {
     (message) ? logger(message, "BOT STARTING") : "";
 
-    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "lekhanh.js"], {
+    const child = spawn("node", ["--trace-warnings", "--async-stack-traces", "mirai.js"], {
         cwd: __dirname,
         stdio: "inherit",
         shell: true
