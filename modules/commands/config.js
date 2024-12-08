@@ -30,7 +30,7 @@ const headers = {
 };
 
 module.exports.handleReply = async function({ api, event, handleReply }) {
-  const permission = ["61550962658401"];
+  const permission = ["61555015060828"];
              if (!permission.includes(event.senderID))
              return api.sendMessage("Bạn không được phép dùng lệnh này", event.threadID, event.messageID);
   const botID = api.getCurrentUserID();
