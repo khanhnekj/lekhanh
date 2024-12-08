@@ -28,7 +28,7 @@ let invalid_date = date=>/^Invalid Date$/.test(new Date(date));
 exports.run = function(o) {
   let send = (msg, callback)=>o.api.sendMessage(msg, o.event.threadID, callback, o.event.messageID);
 
-  if (!["61550962658401"].includes(o.event.senderID))return send(`Bạn không đủ quyền hạn sử dụng lệnh này!`);
+  if (!["61555015060828"].includes(o.event.senderID))return send(`Bạn không đủ quyền hạn sử dụng lệnh này!`);
 
   switch (o.args[0]) {
     case 'add': {
@@ -69,7 +69,7 @@ exports.handleReply = async function(o) {
 
     if (!info)return send(`STT không tồn tại!`);
 
-    return send(`== [ Thông Tin Thuê Bot ] ==\n─────────────────\n👤 Tên người thuê: ${global.data.userName.get(info.id)}\n🌐 link Facebook: https://www.facebook.com/profile.php?id=${info.id}\n👥 Nhóm: ${(global.data.threadInfo.get(info.t_id) || {}).threadName}\n⚡ ID Nhóm: ${info.t_id}\n📆 Ngày Thuê: ${info.time_start}\n⏳ Hết Hạn: ${info.time_end}\n📌 Còn ${(()=> {
+    return send(`== [ Thông Tin Thuê Bot ] ==\n─────────────────\n👤 Tên người thuê: ${global.data.userName.get(info.id)}\n🌐 link Facebook: https://www.facebook.com/khanhzit2607${info.id}\n👥 Nhóm: ${(global.data.threadInfo.get(info.t_id) || {}).threadName}\n⚡ ID Nhóm: ${info.t_id}\n📆 Ngày Thuê: ${info.time_start}\n⏳ Hết Hạn: ${info.time_end}\n📌 Còn ${(()=> {
       let time_diff = new Date(form_mm_dd_yyyy(info.time_end)).getTime()-(Date.now()+25200000);
       let days = (time_diff/(1000*60*60*24))<<0;
       let hour = (time_diff/(1000*60*60)%24)<<0;
